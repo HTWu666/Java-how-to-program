@@ -63,9 +63,9 @@ public class GameOfCraps {
         		}
         	}
         	totalRolls += rollTimes;
-        	rollTimes = 0;
+        	rollTimes = 0;//reset rollTimes for the next play
         }
-        
+        //calculate the win posibility of k-th rolls
         for(int k = 1; k < winCount.length; k++)
         	winPosibilityOfRolls[k] = (double)winCount[k]/(winCount[k] + loseCount[k]) * 100;
         
