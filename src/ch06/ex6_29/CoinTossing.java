@@ -1,3 +1,5 @@
+//CoinTossing game and could show the head count and tail count.
+
 import java.util.Scanner;
 import java.security.SecureRandom;
 
