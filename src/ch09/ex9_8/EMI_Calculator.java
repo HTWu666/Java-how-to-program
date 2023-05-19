@@ -1,3 +1,9 @@
+/*EX 9.8
+Write a java application that read two values, the principal amount of a loan and the tenure of the loan from the user and calculates the monthy
+installment payable for different types of loans and returns the results. Use an inheritance hierarchy to design your application. Creat a super
+class Loan that is extended by the subclass HomeLoan, VechicleLoan and PersonalLoan.Each type would have a predefined interest rate. You
+application should instantitate each type of subclass after reading the input from the user.*/
+
 package ex9_8;
 
 import java.util.Scanner;
