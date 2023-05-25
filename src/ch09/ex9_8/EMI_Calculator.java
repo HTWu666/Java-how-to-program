@@ -15,17 +15,21 @@ public class EMI_Calculator {
 		PersonalLoan personalLoan = new PersonalLoan(1, 1);
 		Scanner input = new Scanner(System.in);
 
-		System.out.println("Welcome to the EMI calculator!\nWhat kind of loan would you like to apply?\n1 - Home Loan\n2 - Vechicle Loan\n3 - Personal Loan\n9 - quit");
-		int kindOfLoan = input.nextInt();
-
-		if(kindOfLoan == 1 || kindOfLoan == 2 || kindOfLoan == 3) {
-			System.out.println("How much is the principal? ");
-			double principal = input.nextInt();
-
-			System.out.println("How long is the tenure in month? ");
-			double n = input.nextInt();
-
-			while(kindOfLoan != 9) {
+		System.out.println("Welcome to the EMI calculator!\n");
+		
+	        //ask question until user request to quit
+		while(true) {
+			System.out.println("What kind of loan would you like to apply?\n1 - Home Loan\n2 - Vechicle Loan\n3 - Personal Loan\n9 - quit");
+			int kindOfLoan = input.nextInt();
+			
+			//if user enter a valid number and not a quit number, calculate EMI based on the principal and the period provided by user
+			if(kindOfLoan == 1 || kindOfLoan == 2 || kindOfLoan == 3) {
+				System.out.print("How much is the principal?\n$");
+				double principal = input.nextDouble();
+	
+				System.out.println("How long is the tenure in month?\n ");
+				double n = input.nextDouble();
+				
 				if(kindOfLoan == 1)
 					homeLoan.monthlyInstallmentPayalbe(principal, n);
 
@@ -34,22 +38,15 @@ public class EMI_Calculator {
 
 				else if(kindOfLoan == 3)
 					personalLoan.monthlyInstallmentPayalbe(principal, n);
-
-				else {
-					System.out.println("It's not a valid option\nExiting...");
-					break;
-				}
-
-				System.out.println("What kind of loan would you like to apply?\n1 - Home Loan\n2 - Vechicle Loan\n3 - Personal Loan\n9 - quit");
-				kindOfLoan = input.nextInt();
 			}
-			System.out.println("Exiting...");
-		}
-		else if(kindOfLoan == 9)
-			System.out.println("Exiting...");
-		else
-			System.out.println("It's not a valid option\nExiting...");
+			
+			//quit the application
+			else if(kindOfLoan == 9)
+				break;
+			//If the input is an invalid number
+			else
+				System.out.println("It's an invalid number, please try again.\n");
+		}//end while
 		input.close();
-	}
-
-}
+	}//end main
+}//end class
