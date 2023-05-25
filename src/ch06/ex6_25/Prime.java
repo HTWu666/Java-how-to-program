@@ -26,6 +26,7 @@ public class Prime_ {
 		System.out.println(isPrime3(num) == true? "is prime": "not prime");
 	}
 	
+	//number mod every number which is less than it step by step
 	static boolean isPrime1(int num) {
 		if(num < 2)
 			return false;
@@ -37,6 +38,8 @@ public class Prime_ {
 		}
 		return true;
 	}
+	
+	//check the number is even or not. If it's even, then it's not prime. If it's not even can be check in the way that take 1 number as interval.
 	static boolean isPrime2(int num) {
 		if(num < 2)
 			return false;
@@ -48,6 +51,9 @@ public class Prime_ {
 		}
 		return true;
 	}
+	
+	/*A positive inter is either a prime or a composite, and it must can be factorized into two natural. 
+	One is less than or equal to its root, the other is greater than or equal to its root. These two factor would be a pair*/  
 	static boolean isPrime3(int num) {
 		if(num < 2)
 			return false;
