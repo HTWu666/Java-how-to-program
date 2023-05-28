@@ -30,11 +30,10 @@ public class Prime_ {
 	static boolean isPrime1(int num) {
 		if(num < 2)
 			return false;
-		else {
-			for(int i = 2; i < num; i++) {
-				if (num % i == 0 && num > 2)
-					return false;
-			}
+		
+		for(int i = 2; i < num; i++) {
+			if (num % i == 0 && num > 2)
+				return false;
 		}
 		return true;
 	}
